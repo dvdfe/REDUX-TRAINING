@@ -1,11 +1,10 @@
 import React from "react";
-import { useSelector } from 'react-redux';
-import userReducer from '../reducers/user.reducer';
-import {isEmpty} from "./Utils"
+import { useSelector } from "react-redux";
+import userReducer from "../reducers/user.reducer";
+import { isEmpty } from "./Utils";
 
 const User = () => {
-
-const user = useSelector((state) => state.userReducer);
+  const user = useSelector((state) => state.userReducer);
 
   return (
     <div className="user-container">
@@ -13,7 +12,10 @@ const user = useSelector((state) => state.userReducer);
         <h3>{!isEmpty(user) && user.pseudo}</h3>
         <img src="./img/bill-gates.png" alt="bill gates" />
         <p>Age : {!isEmpty(user) && user.age} ans</p>
-        <p>Like{!isEmpty(user) && user.likes > 1 ? "s" : ""} : {!isEmpty(user) && user.likes}</p>
+        <p>
+          Like{!isEmpty(user) && user.likes > 1 ? "s" : ""} :{" "}
+          {!isEmpty(user) && user.likes}
+        </p>
       </div>
     </div>
   );
